@@ -7,6 +7,7 @@ App::uses('AppModel', 'Model');
  */
 class Provider extends AppModel {
 
+	public $useTable = "actors";
 /**
  * Display field
  *
@@ -26,8 +27,8 @@ class Provider extends AppModel {
 		'Composant' => array(
 			'className' => 'Composant',
 			'foreignKey' => 'provider_id',
-			'dependent' => false,
-			'conditions' => '',
+			'dependent' => true,
+			'conditions' => array('type'=>"P"),
 			'fields' => '',
 			'order' => '',
 			'limit' => '',

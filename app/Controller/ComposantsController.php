@@ -58,8 +58,9 @@ class ComposantsController extends AppController {
 		}
 		$families = $this->Composant->Family->find('list');
 		$taxes = $this->Composant->Tax->find('list');
-		$providers = $this->Composant->Provider->find('list');
-		$this->set(compact('families', 'taxes', 'providers'));
+		$providers = $this->Composant->Provider->find('list',array('conditions'=>array('type'=>'P')));
+		$units = $this->Composant->Unit->find('list');
+		$this->set(compact('families', 'taxes', 'providers','units'));
 	}
 
 /**
@@ -86,8 +87,10 @@ class ComposantsController extends AppController {
 		}
 		$families = $this->Composant->Family->find('list');
 		$taxes = $this->Composant->Tax->find('list');
-		$providers = $this->Composant->Provider->find('list');
-		$this->set(compact('families', 'taxes', 'providers'));
+		$providers = $this->Composant->Provider->find('list',array('conditions'=>array('type'=>'P')));
+		$units = $this->Composant->Unit->find('list');
+		
+		$this->set(compact('families', 'taxes', 'providers', 'units'));
 	}
 
 /**

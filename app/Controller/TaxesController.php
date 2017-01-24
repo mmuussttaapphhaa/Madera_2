@@ -51,7 +51,7 @@ class TaxesController extends AppController {
 			$this->Tax->create();
 			if ($this->Tax->save($this->request->data)) {
 				$this->Session->setFlash(__('The tax has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect($this->referer());
 			} else {
 				$this->Session->setFlash(__('The tax could not be saved. Please, try again.'));
 			}
@@ -72,7 +72,7 @@ class TaxesController extends AppController {
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Tax->save($this->request->data)) {
 				$this->Session->setFlash(__('The tax has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect($this->referer());
 			} else {
 				$this->Session->setFlash(__('The tax could not be saved. Please, try again.'));
 			}
@@ -100,6 +100,6 @@ class TaxesController extends AppController {
 		} else {
 			$this->Session->setFlash(__('The tax could not be deleted. Please, try again.'));
 		}
-		return $this->redirect(array('action' => 'index'));
+		return $this->redirect($this->referer());
 	}
 }

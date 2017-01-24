@@ -153,7 +153,7 @@
  *	`admin_index()` and `/admin/controller/index`
  *	`manager_index()` and `/manager/controller/index`
  */
-Configure::write('Routing.prefixes', array('stock'));
+Configure::write('Routing.prefixes', array('stock','admin','commercial'));
 
 /**
  * Turn off all caching application-wide.
@@ -225,12 +225,12 @@ Configure::write('Routing.prefixes', array('stock'));
 /**
  * A random string used in security hashing methods.
  */
-	Configure::write('Security.salt', 'DYhG93b765RY56R7I6R453STRLJKGHGDFSESSDQ6SEqdffsersARDC2G0FgaC9mi');
+	Configure::write('Security.salt', 'DYhG93b765sqdfdsqfsdlkSDFSDRY56R7I6R453STRLJKGHGDFSEQSLFK?SQDKLF?QSSSDQ6SEqdffsersARDC2G0FgaC9mi');
 
 /**
  * A random numeric string (digits only) used to encrypt/decrypt strings.
  */
-	Configure::write('Security.cipherSeed', '768590897867565230965745354249665745354543543432435465798749683645');
+	Configure::write('Security.cipherSeed', '768545354249665745354DSF54352834786324152343432435465798749683645');
 
 /**
  * Apply timestamps with the last modified time to static assets (js, css, images).

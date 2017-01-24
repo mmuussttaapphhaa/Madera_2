@@ -20,7 +20,7 @@ class ProvidersController extends AppController {
  *
  * @return void
  */
-	public function stock_index() {
+	public function stock_index($p = null) {
 		$this->Provider->recursive = 0;
 		$this->set('providers', $this->Paginator->paginate());
 	}

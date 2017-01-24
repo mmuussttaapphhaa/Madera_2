@@ -51,7 +51,7 @@ class FamiliesController extends AppController {
 			$this->Family->create();
 			if ($this->Family->save($this->request->data)) {
 				$this->Session->setFlash(__('The family has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect($this->referer());
 			} else {
 				$this->Session->setFlash(__('The family could not be saved. Please, try again.'));
 			}
@@ -72,7 +72,7 @@ class FamiliesController extends AppController {
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Family->save($this->request->data)) {
 				$this->Session->setFlash(__('The family has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect($this->referer());
 			} else {
 				$this->Session->setFlash(__('The family could not be saved. Please, try again.'));
 			}
@@ -100,6 +100,6 @@ class FamiliesController extends AppController {
 		} else {
 			$this->Session->setFlash(__('The family could not be deleted. Please, try again.'));
 		}
-		return $this->redirect(array('action' => 'index'));
+		return $this->redirect($this->referer());
 	}
 }

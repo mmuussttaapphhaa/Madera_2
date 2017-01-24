@@ -25,26 +25,13 @@ class Composant extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'Family' => array(
-			'className' => 'Family',
-			'foreignKey' => 'family_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
-		'Tax' => array(
-			'className' => 'Tax',
-			'foreignKey' => 'tax_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
+		'Family',
+		'Tax',
 		'Provider' => array(
 			'className' => 'Provider',
 			'foreignKey' => 'provider_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		)
+			'conditions' => array('Provider.type'=>'P')
+		),
+		'Unit'
 	);
 }
