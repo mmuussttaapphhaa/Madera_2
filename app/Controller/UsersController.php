@@ -7,15 +7,15 @@ class UsersController extends AppController{
     public function login(){
         if (!empty($this->request->data)) {
             if ($this->Auth->login()) {
-                if ($this->Auth->user('active') == 1){ 
+                if ($this->Auth->User('active') == 1){ 
                     if($this->Auth->User('Role.prefix')=="stock"){
-                        $this->redirect($this->Auth->redirect('/stock/dashboard'));
+                        $this->redirect($this->Auth->redirect('/stock/composants'));
                     } 
                     else if($this->Auth->User('Role.prefix')=="commercial"){
-                        $this->redirect($this->Auth->redirect('/commercial/dashboard'));
+                        $this->redirect($this->Auth->redirect('/commercial/projects'));
                     } 
                     else if($this->Auth->User('Role.prefix')=="admin"){
-                        $this->redirect($this->Auth->redirect('/admin/dashboard'));
+                        $this->redirect($this->Auth->redirect('/admin/users'));
                     }
                 }else{
                     $this->Session->delete('User');

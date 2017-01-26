@@ -15,6 +15,5 @@
  */
 ?>
 <?php //echo $this->fetch('content'); ?>
-<div class="alert">
+
 <?= $this->fetch('content'); ?>
-</div>

@@ -83,6 +83,11 @@
 					<i class="fa fa-th"></i> <span>Gestion des Modules</span>
 				</a>
 			</li>
+       <li>
+				<a href="<?= $this->Html->url(array('controller'=>'modeles','action'=>'index','stock'=>true)) ?>">
+					<i class="fa fa-th"></i> <span>Gestion des Modèles</span>
+				</a>
+			</li>
 		</ul>
     </section>
     <!-- /.sidebar -->

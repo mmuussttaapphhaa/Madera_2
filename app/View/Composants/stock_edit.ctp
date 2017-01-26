@@ -24,7 +24,7 @@
 	<?php endforeach ?>
 	<?= $this->Form->input('characteristics',array('label'=>'Caractéristiques','type'=>'textarea','class'=>'form-control')); ?>
 	<hr>
-	<?= $this->Form->submit('Envoyer',array('class'=>'btn btn-madera')); ?>
+	<?= $this->Form->submit('Editer',array('class'=>'btn btn-madera')); ?>
 <?= $this->Form->end(); ?>
 </div>
 

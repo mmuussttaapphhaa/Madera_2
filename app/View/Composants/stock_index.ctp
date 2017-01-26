@@ -5,13 +5,13 @@
 	?>
 	<div style="float:right">
 	<?php echo $this->Html->link("Gestion des Familles",array('controller'=>'families','action'=>'index'),
-		array('id'=>"modal","class"=>"btn btn-default")); 
+		array('id'=>"modal","class"=>"btn btn-warning")); 
 	?>
 	<?php echo $this->Html->link("Gestion des TVA",array('controller'=>'taxes','action'=>'index'),
-		array('id'=>"modal","class"=>"btn btn-default")); 
+		array('id'=>"modal","class"=>"btn btn-warning")); 
 	?>
 	<?php echo $this->Html->link("Gestion des Unités",array('controller'=>'units','action'=>'index'),
-		array('id'=>"modal","class"=>"btn btn-default")); 
+		array('id'=>"modal","class"=>"btn btn-warning")); 
 	?>
 	</div>
 	<hr>

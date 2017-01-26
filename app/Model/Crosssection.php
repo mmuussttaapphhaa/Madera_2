@@ -1,17 +1,16 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * Module Model
+ * Crosssection Model
  *
- * @property Unit $Unit
- * @property Composant $Composant
+ * @property Modele $Modele
  */
-class Module extends AppModel {
+class Crosssection extends AppModel {
 
 	public $actsAs = array(
         'Upload.Upload' => array(
             'fields' => array(
-                'img' => '/files/modules/:y/:md5'
+                'plan' => '/files/coupes_principes/:y/:md5'
             ),
             'resize'=>array(
                 'ok'=>false
@@ -34,7 +33,7 @@ class Module extends AppModel {
 	public $validate = array(
 		'name' => array(
 			'notEmpty' => array(
-				'rule' => array('notBlank'),
+				'rule' => array('notEmpty'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -42,19 +41,9 @@ class Module extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'caracteristics' => array(
+		'plan' => array(
 			'notEmpty' => array(
-				'rule' => array('notBlank'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'unit_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
+				'rule' => array('notEmpty'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -67,38 +56,23 @@ class Module extends AppModel {
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**
- * belongsTo associations
+ * hasMany associations
  *
  * @var array
  */
-	public $belongsTo = array(
-		'Unit' => array(
-			'className' => 'Unit',
-			'foreignKey' => 'unit_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		)
-	);
-
-/**
- * hasAndBelongsToMany associations
- *
- * @var array
- */
-	public $hasAndBelongsToMany = array(
-		'Composant' => array(
-			'className' => 'Composant',
-			'joinTable' => 'composants_modules',
-			'foreignKey' => 'module_id',
-			'associationForeignKey' => 'composant_id',
-			'unique' => 'keepExisting',
+	public $hasMany = array(
+		'Modele' => array(
+			'className' => 'Modele',
+			'foreignKey' => 'crosssection_id',
+			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
 			'limit' => '',
 			'offset' => '',
+			'exclusive' => '',
 			'finderQuery' => '',
+			'counterQuery' => ''
 		)
 	);
 

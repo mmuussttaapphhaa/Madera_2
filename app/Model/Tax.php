@@ -26,15 +26,12 @@ class Tax extends AppModel {
 		'Composant' => array(
 			'className' => 'Composant',
 			'foreignKey' => 'tax_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'dependent' => false
+		),
+		'Modele' => array(
+			'className' => 'Modele',
+			'foreignKey' => 'tax_id',
+			'dependent' => false
 		)
 	);
 
